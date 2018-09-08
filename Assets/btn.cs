@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class btn : MonoBehaviour {
     public Button botton;
     public Action click;
+    public Image icon;
     private Image img;
     // Use this for initialization
-    void Start () {
+    void Awake () {
         img = GetComponent<Image>();
         botton.onClick.AddListener(() =>
         {
@@ -22,13 +23,15 @@ public class btn : MonoBehaviour {
         
 
 	}
-	public void setData(Color color, Action _act)
+	public void setData(Sprite spr, Color color, Action _act)
     {
+        icon.sprite = spr;
         img.color = color;
         click = _act;
     }
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
