@@ -18,7 +18,6 @@ public class Manager : MonoBehaviour {
     {
         if (instance == null)
             instance = this;
-        
         //s[rnd.Next(0, 4)] = 
     }
 
@@ -64,7 +63,7 @@ public class Manager : MonoBehaviour {
         {
             if(score >= dict[i.ToString()])
             {
-                dict[i.ToString()] = score;
+                //dict[i.ToString()] = score;
                 SetTop10Score(i.ToString(), score);
                 for(int j = i; j<10; j++)
                 {
