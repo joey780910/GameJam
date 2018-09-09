@@ -10,6 +10,7 @@ public class MenuWnd : MonoBehaviour {
         start.onClick.AddListener(() => 
         {
             gameObject.SetActive(false);
+            Manager.instance.StartGameCountDown();
         }
         );
 	}

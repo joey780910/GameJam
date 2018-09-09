@@ -9,6 +9,8 @@ public class Manager : MonoBehaviour {
     public static Manager instance;
     public List<Action> s = new List<Action>();
     public TopArea topArea;
+    public TimeWnd timeWnd;
+    public buttonControl btnControl;
 
     private void Awake()
     {
@@ -16,6 +18,22 @@ public class Manager : MonoBehaviour {
             instance = this;
         
         //s[rnd.Next(0, 4)] = 
+    }
+
+    public void StartGameCountDown()
+    {
+        timeWnd.StartGameCountDown();
+        btnControl.ResetGame();
+    }
+
+    public void StartGame()
+    {
+
+    }
+
+    public void GameTimeUp()
+    {
+
     }
 
     private void SetBtn(Action action, int value, Color color)
