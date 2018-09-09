@@ -9,18 +9,24 @@ public class TopArea : MonoBehaviour {
     private float scaleChange = 0.1f;
     public float currentScale = 1;
     public float targetScale;
-
+    public List<Sprite> monsterList = new List<Sprite>();
+    private System.Random r = new System.Random();
     // Use this for initialization
     void Start ()
     {
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-
+        
     }
-
+    public void ChangeRandomMonster()
+    {
+        int index = r.Next(0, 10);
+        monster.sprite = monsterList[index];
+    }
     public void MonsterScale(float value)
     {
         Debug.Log(value);

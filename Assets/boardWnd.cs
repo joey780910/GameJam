@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuWnd : MonoBehaviour {
-    public Button start;
-    public Button scoreBoard;
+public class boardWnd : MonoBehaviour {
+    public Button back;
 	// Use this for initialization
 	void Start () {
-        start.onClick.AddListener(() =>
-        {
-            Manager.instance.StartGameCountDown();
-            selfActive(false);
-        });
-
-        scoreBoard.onClick.AddListener(() =>
+        back.onClick.AddListener(() =>
         {
             selfActive(false);
-        });
-	}
+        }
+        );
+    }
     public void selfActive(bool act)
     {
         gameObject.SetActive(act);
