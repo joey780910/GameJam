@@ -19,7 +19,8 @@ public class finalWnd : MonoBehaviour {
 
         scoreBoard.onClick.AddListener(() =>
         {
-            selfActive(false);
+            Manager.instance.ShowTop10();
+            //selfActive(false);
         });
     }
 	public void selfActive(bool act)

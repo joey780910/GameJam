@@ -30,14 +30,14 @@ public class TimeWnd : MonoBehaviour {
             return;
         }
         CountDownTime -= Time.deltaTime;
-        TimeText.text = ((int)CountDownTime).ToString();
+        TimeText.text = "Time : " + ((int)CountDownTime).ToString();
     }
 
     public void StartGameCountDown()
     {
         MaskObj.SetActive(true);
 
-        TimeText.text = ((int)CountDownTime).ToString();
+        TimeText.text = "Time : " + ((int)CountDownTime).ToString();
 
         CountDownObj.SetActive(true);
         CountDownSec = 3;

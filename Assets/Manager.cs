@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour {
     public TimeWnd timeWnd;
     public buttonControl btnControl;
     public finalWnd FWnd;
+    public boardWnd BWnd;
 
     private void Awake()
     {
@@ -37,7 +38,41 @@ public class Manager : MonoBehaviour {
     {
         FWnd.selfActive(true);
         FWnd.setScore(btnControl.getScore());
+        SaveTop10(btnControl.getScore());
+    }
 
+    public void ShowTop10()
+    {
+        BWnd.SetData();
+    }
+
+    public Dictionary<string, int> GetTop10()
+    {
+        Dictionary<string, int> dict = new Dictionary<string, int>();
+        for(int i = 1; i < 11; i++)
+        {
+            dict.Add(i.ToString(), GetTop10Score(i.ToString()));
+        }
+        return dict;
+    }
+
+    public void SaveTop10(int score)
+    {
+        var dict = GetTop10();
+
+        for(int i = 1; i<11; i++)
+        {
+            if(score >= dict[i.ToString()])
+            {
+                dict[i.ToString()] = score;
+                SetTop10Score(i.ToString(), score);
+                for(int j = i; j<10; j++)
+                {
+                    SetTop10Score((j+1).ToString(), dict[j.ToString()]);
+                }
+                return;
+            }
+        }
     }
 
     private void SetBtn(Action action, int value, Color color)

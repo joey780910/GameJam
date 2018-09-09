@@ -24,6 +24,7 @@ public class boardWnd : MonoBehaviour {
 
     public void SetData()
     {
+        selfActive(true);
         for(int i = 0; i < ObjList.Count; i++)
         {
             ObjList[i].SetData(i + 1, Manager.instance.GetTop10Score((i+1).ToString()));

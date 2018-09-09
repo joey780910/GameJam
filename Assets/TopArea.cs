@@ -37,7 +37,6 @@ public class TopArea : MonoBehaviour {
     }
     public void MonsterScale(float value)
     {
-        Debug.Log(value);
 
         float s = scaleChange * value;
 

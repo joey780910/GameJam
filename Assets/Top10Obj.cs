@@ -9,6 +9,11 @@ public class Top10Obj : MonoBehaviour {
 
     public void SetData(int index, int score)
     {
-        scoreText.text = index + "." + score;
+        if(score == -1)
+        {
+            scoreText.text = "----------";
+            return;
+        }
+        scoreText.text = index + ". Score : " + score;
     }
 }
