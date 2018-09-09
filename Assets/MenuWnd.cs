@@ -8,6 +8,7 @@ public class MenuWnd : MonoBehaviour {
     public Button scoreBoard;
 	// Use this for initialization
 	void Start () {
+        selfActive(true);
         start.onClick.AddListener(() =>
         {
             Manager.instance.StartGameCountDown();

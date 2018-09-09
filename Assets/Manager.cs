@@ -36,6 +36,8 @@ public class Manager : MonoBehaviour {
     public void GameTimeUp()
     {
         FWnd.selfActive(true);
+        FWnd.setScore(btnControl.getScore());
+
     }
 
     private void SetBtn(Action action, int value, Color color)
