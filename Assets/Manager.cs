@@ -55,4 +55,14 @@ public class Manager : MonoBehaviour {
     {
         topArea.MonsterScale(_score);
     }
+
+    public void SetTop10Score(string key, int score)
+    {
+        PlayerPrefs.SetInt(key, score);
+    }
+
+    public int GetTop10Score(string key)
+    {
+        return PlayerPrefs.GetInt(key, -1);
+    }
 }
