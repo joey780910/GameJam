@@ -41,7 +41,10 @@ public class buttonControl : MonoBehaviour {
         updateBotton();
         score = 0;
     }
-
+    public int getScore()
+    {
+        return score;
+    }
 	// Update is called once per frame
 	void Update () {
 		
