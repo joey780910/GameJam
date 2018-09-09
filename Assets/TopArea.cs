@@ -14,7 +14,7 @@ public class TopArea : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
+        ChangeRandomMonster();
     }
 	
 	// Update is called once per frame
@@ -22,6 +22,14 @@ public class TopArea : MonoBehaviour {
     {
         
     }
+
+    public void ResetGame()
+    {
+        ChangeRandomMonster();
+        monster.transform.localScale = Vector3.one;
+        scaleChange = 0.1f;
+    }
+
     public void ChangeRandomMonster()
     {
         int index = r.Next(0, 10);
@@ -35,6 +43,7 @@ public class TopArea : MonoBehaviour {
 
         if (monster.transform.localScale.x - s <= 0)
         {
+            ChangeRandomMonster();
             monster.transform.localScale = Vector3.one;
             if (scaleChange - 0.01f <= 0.01f)
                 return;

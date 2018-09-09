@@ -7,6 +7,8 @@ public class boardWnd : MonoBehaviour {
     public Button back;
 	// Use this for initialization
 	void Start () {
+        selfActive(false);
+
         back.onClick.AddListener(() =>
         {
             selfActive(false);

@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour {
     public TopArea topArea;
     public TimeWnd timeWnd;
     public buttonControl btnControl;
+    public finalWnd FWnd;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class Manager : MonoBehaviour {
     {
         timeWnd.StartGameCountDown();
         btnControl.ResetGame();
+        topArea.ResetGame();
     }
 
     public void StartGame()
@@ -33,7 +35,7 @@ public class Manager : MonoBehaviour {
 
     public void GameTimeUp()
     {
-
+        FWnd.selfActive(true);
     }
 
     private void SetBtn(Action action, int value, Color color)
